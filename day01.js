@@ -2,20 +2,25 @@
 
 let a = 4
 let result = (a > 0) ? "positive" : "negative"
-console.log(result)
+// console.log(result)
 
 // task 2 : age checker 
 
 let age = 22
 let validity = (age >= 18) ? "adult" : "teen"
-console.log(validity)
+// console.log(validity)
 
 // task 3 : number compare
 
 let x = 20
 let y = 30
 let compare = (x > y) ? "X is not greater than Y" : "Y is not greater than X"
-console.log(compare)
+// console.log(compare)
+
+// task 4 : checking odd
+let num = 21
+let check = (num % 2 === 0) ? 'The number is Odd' : 'The number is Even'
+console.log(check)
 
 
 // mini challenge : grade system 
