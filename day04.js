@@ -1,59 +1,44 @@
 // task 1 : sum two numbers
-
 function add(a, b) {
-    let result = a + b
-    console.log(result) // we can log or return the result
+    return a + b;
 }
-
-add(2, 4)
+console.log(add(2, 4))
 
 //task 2 : greetings
-
 function greet(x) {
-    console.log(`Hello ${x}`)
+    return `Hello ${x}`;
 }
-
-greet("Jonaed")
+console.log(greet("Jonaed"))
 
 // task 3 : check even odd numbers
-
 function test(num) {
-    if (num % 2 === 0) {
-        console.log("This is a Even number")
-    } else {
-        console.log("This is a Odd number")
-    }
+    return num % 2 === 0 ? "Even number" : "Odd number";
 }
+console.log(test(20))
 
-test(20)
-
-// task 4 : return (1-n) er sum, tricky
-
+// task 4 : return (1-n) er sum
 function sum(n) {
     let summation = 0
     for (let i = 1; i <= n; i++) {
-        summation = summation + i
+        summation += i
     }
-    return (summation);
+    return summation;
 }
-const result = sum(10)
-console.log(result)
+console.log(sum(10))
 
 // task 5 : sum the elements of an array
-
 let arr = [1, 2, 3, 4, 5, 6]
 
 function calculateSum(arr) {
     let summation = 0;
     for (let i = 0; i < arr.length; i++) {
-        summation = summation + arr[i]
+        summation += arr[i]
     }
     return summation;
 }
 console.log(calculateSum(arr))
 
-// task 6 : create an array and pick even numbers to make new array
-
+// task 6 : even numbers array
 function getEvenNumbers(arr) {
     let result = [];
     for (let i = 0; i < arr.length; i++) {
@@ -65,42 +50,51 @@ function getEvenNumbers(arr) {
 }
 console.log(getEvenNumbers(arr))
 
-// task 7 : square of a number
-
+// task 7 : square
 function getTheSquareOfNumber(num) {
-    let square = num * num
-    console.log(square)
+    return num * num;
 }
-getTheSquareOfNumber(5)
+console.log(getTheSquareOfNumber(5))
 
-// task 8 : find biggest number among 3 numbers
-
+// task 8 : biggest number
 function findThebiggestNumber(num1, num2, num3) {
     if (num1 > num2 && num1 > num3) {
-        console.log("First number is the biggest number")
+        return "First number is biggest"
     } else if (num2 > num3 && num2 > num1) {
-        console.log("Second number is the biggest number")
+        return "Second number is biggest"
     } else {
-        console.log("Third number is the biggest number")
+        return "Third number is biggest"
     }
 }
-findThebiggestNumber(2, 5, 1)
+console.log(findThebiggestNumber(2, 5, 1))
 
-// task 9 : find smallest number in array
+// task 8 : biggest number -> clean code 
 
+function findBiggest(a, b, c) {
+    let biggest = a;
+    if (b > biggest) {
+        biggest = b;
+    }
+    if (c > biggest) {
+        biggest = c;
+    }
+    return biggest;
+}
+console.log(findBiggest(2, 5, 1))
+
+// task 9 : smallest number
 function getTheSmallestNumber(arr) {
     let smallest = arr[0];
-    for (let i = 1; i <= arr.length; i++) {
+    for (let i = 1; i < arr.length; i++) {
         if (arr[i] < smallest) {
             smallest = arr[i]
         }
     }
     return smallest;
 }
-console.log(`The smallest number is ${getTheSmallestNumber(arr)}`)
+console.log(getTheSmallestNumber(arr))
 
-// task 10 : return the odd number count from an array 
-
+// task 10 : odd count
 function getTheCountOfOddNum(arr) {
     let count = 0;
     for (let i = 0; i < arr.length; i++) {
@@ -110,23 +104,19 @@ function getTheCountOfOddNum(arr) {
     }
     return count;
 }
+console.log(getTheCountOfOddNum(arr))
 
-console.log(`Total Odd number is ${getTheCountOfOddNum(arr)}`)
-
-// task 11 : reverse string 
-
+// task 11 : reverse string
 function reverseString(str) {
     let reversed = "";
     for (let i = str.length - 1; i >= 0; i--) {
-        reversed = reversed + str[i]
+        reversed += str[i]
     }
     return reversed
 }
+console.log(reverseString("hello"))
 
-console.log(reverseString("konok"))
-
-// task 12 : return the even number count from an array 
-
+// task 12 : even count
 function getTheCountOfEvenNum(arr) {
     let count = 0;
     for (let i = 0; i < arr.length; i++) {
@@ -136,16 +126,13 @@ function getTheCountOfEvenNum(arr) {
     }
     return count;
 }
+console.log(getTheCountOfEvenNum(arr))
 
-console.log(`Total Even number is ${getTheCountOfEvenNum(arr)}`)
-
-// task 13 :  new array from old array X 2 
-
+// task 13 : doubled array
 function getTheDoubledNumArr(arr) {
     let doubledArr = [];
     for (let i = 0; i < arr.length; i++) {
-        const double = arr[i] * 2;
-        doubledArr.push(double)
+        doubledArr.push(arr[i] * 2)
     }
     return doubledArr
 }
